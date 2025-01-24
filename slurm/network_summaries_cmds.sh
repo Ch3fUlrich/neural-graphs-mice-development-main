@@ -1,0 +1,9 @@
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "zscores" --connect_thresh 1
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "zscores" --connect_thresh 2
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "zscores" --connect_thresh 4
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "zscores" --connect_thresh 8
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "sttc_percentiles" --connect_thresh 95
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "sttc_percentiles" --connect_thresh 96
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "sttc_percentiles" --connect_thresh 97
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "sttc_percentiles" --connect_thresh 98
+python scripts/network_summaries.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "sttc_percentiles" --connect_thresh 99

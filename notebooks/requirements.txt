@@ -1,0 +1,8 @@
+ipympl>=0.9
+jupyterlab >= 3.2
+jupyter-dash>=0.4
+NetLSD>=1.0
+statsmodels>=0.13
+plotly>=5.11
+pot>=0.8
+scikit-learn>=1.1

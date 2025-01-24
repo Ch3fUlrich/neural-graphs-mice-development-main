@@ -1,0 +1,2 @@
+python scripts/sim_mat_statistics.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "corrs"
+python scripts/sim_mat_statistics.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "sttc"
