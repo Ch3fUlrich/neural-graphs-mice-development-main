@@ -1,5 +1,7 @@
 # neural-graphs-mice-development
 
+This repository is a brach of the GitLab Repository from Rodrigo C. G. Pena: https://gitlab.com/ceda-unibas/neural-graphs-mice-development
+
 Comparing the structure of neural connections during the development of mice.
 
 [![license][license-badge]][license]
