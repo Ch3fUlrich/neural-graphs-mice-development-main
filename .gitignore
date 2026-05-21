@@ -6,3 +6,4 @@ logs/*
 core.*
 *.ipynb_checkpoints/
 notebooks/_sketch_pad.ipynb
+/build

@@ -23,7 +23,7 @@ except KeyError:
         "Try setting DATA_DIR directly or assign first a "
         "value to variable NGMD_DATA in your bash_profile (or zshrc) file."
     )
-    DATA_DIR = r"Y:\Users\Sergej\Steffen_Experiments\rodrigo"
+    DATA_DIR = r"F:\Experiments\Steffen\Intrinsic_Imaging"
 
 # Path to the pre-trained models directory. By default, it is pointing to a
 # variable defined in the user's bash_profile (or zshrc) file. If the dataset
