@@ -7,3 +7,10 @@ core.*
 *.ipynb_checkpoints/
 notebooks/_sketch_pad.ipynb
 /build
+results.rar
+
+# Generated notebook outputs (the dir is kept via .gitkeep so notebooks can run)
+notebooks/plots/*
+!notebooks/plots/.gitkeep
+notebooks/results.txt
+notebooks/results.xlsx

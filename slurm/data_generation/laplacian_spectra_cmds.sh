@@ -1,0 +1,2 @@
+python scripts/data_generation/laplacian_spectra.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "zscores" --connect_thresh 4
+python scripts/data_generation/laplacian_spectra.py --data_dir $NGMD_DATA --save_dir $NGMD_DATA/analysis_files --sim_type "sttc_percentiles" --connect_thresh 95

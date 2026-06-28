@@ -256,7 +256,8 @@ class AnimalDataset:
             raise ValueError("which must be either 'rois' or 'sessions'")
         try:
             bad_measurements = pd.read_csv(
-                os.path.join(self.path, "bad_{}.csv".format(which))
+                os.path.join(self.path, "bad_{}.csv".format(which)),
+                dtype={"animal_id": str, "date": str},
             )
         except FileNotFoundError:
             bad_measurements = pd.DataFrame()
@@ -694,10 +695,22 @@ class Session:
         arrays = np.load(os.path.join(self.path, "sttc_arrays.npz"))
 
         sttc_mat = arrays["sttc_mat"]
-        percentiles_mat = arrays["percentiles_mat"]
-        dt = float(arrays["dt"])
-        num_trials = int(arrays["num_trials"])
-        seed = int(arrays["seed"])
+        try:
+            percentiles_mat = arrays["percentiles_mat"]
+        except KeyError:
+            percentiles_mat = None
+        try:
+            dt = float(arrays["dt"])
+        except KeyError:
+            dt = None
+        try:
+            num_trials = int(arrays["num_trials"])
+        except KeyError:
+            num_trials = None
+        try:
+            seed = int(arrays["seed"])
+        except KeyError:
+            seed = None
 
         return sttc_mat, percentiles_mat, dt, num_trials, seed
 

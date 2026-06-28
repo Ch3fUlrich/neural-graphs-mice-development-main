@@ -1,0 +1,58 @@
+paths:
+  # Path to the dataset directory containing the DON-* folders.
+  data_dir: "F:\\Experiments\\Steffen\\Intrinsic_Imaging"
+  # Path to the pre-trained models directory.
+  models_dir: ""
+
+precompute_sttc_arrays:
+  seed: 2024
+  dt: 0.25
+  method: "pulse_shuffle"
+  num_trials: 3
+  n_jobs: 1
+  force_recompute: false
+
+network_summaries:
+  num_subsample_trials: 20
+  subsample_size: 250
+  connect_thresholds: [90, 95, 96, 97, 98, 99]
+
+structural_consistency:
+  num_trials: 20
+  num_subsample_trials: 20
+  subsample_size: 250
+
+development_stages:
+  # Development stage cuts in units of PDay
+  # P15-P24: time window when infantile amnesia disappears
+  # P24-P55: early and late adolescence (Hippocampus mature, prefrontal cortex still developing)
+  # P55-P90: late adolescence/young adulthood (prefrontal cortex developing)
+  # P90+: considered adulthood
+  cuts: [15, 24, 55, 90, 300]
+
+# Default connectivity thresholds for different similarity metrics
+default_connect_thresholds:
+  corrs: 0.2
+  zscores: 5
+  sttc_percentiles: 95
+
+# Plotting configurations
+plotting:
+  histogram_nbins: 51
+
+# STTC analysis parameters for exploratory notebooks
+sttc_analysis:
+  kde_bandwidth: 0.04
+  num_trials: 5
+  xrange: [0, 1]  # range of absolute STTC values
+
+# Laplacian spectra analysis
+laplacian_spectra:
+  random_graph_radius: 0.2
+  netlsd_timescale_points: 250
+
+# Default notebook analysis specifications
+notebook_analysis:
+  default_graph_specs:
+    - ["zscores", 4]
+    - ["sttc_percentiles", 95]

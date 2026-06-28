@@ -7,7 +7,7 @@ import numpy as np
 def get_perturbed_edges(G, p_selection):
     num_edges = len(G.edges)
     num_perturbed_edges = int(p_selection * num_edges)
-    perturbed_edges = sample(G.edges, num_perturbed_edges)
+    perturbed_edges = sample(list(G.edges), num_perturbed_edges)
     return perturbed_edges, num_perturbed_edges
 
 

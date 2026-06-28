@@ -141,12 +141,19 @@ def update_table(new_rows_df, column_names, save_path):
     """
     # Try to load the existing outliers from the file
     try:
-        existing_table = pd.read_csv(save_path)
+        existing_table = pd.read_csv(
+            save_path,
+            dtype={"animal_id": str, "date": str},
+        )
     except FileNotFoundError:
         existing_table = pd.DataFrame(columns=column_names)
 
     # Concatenate the existing and new outliers
-    updated_table = pd.concat([existing_table, new_rows_df])
+    updated_table = pd.concat([existing_table, new_rows_df.copy()])
+    if "animal_id" in updated_table:
+        updated_table["animal_id"] = updated_table["animal_id"].astype(str)
+    if "date" in updated_table:
+        updated_table["date"] = updated_table["date"].astype(str)
 
     # Drop duplicates
     updated_table = updated_table.drop_duplicates()
@@ -196,17 +203,14 @@ def get_sessions_to_loop(animal_dataset):
 def get_default_dev_stage_cuts():
     """Get default development stage cuts
 
+    Loads development stage cuts from the project configuration file.
+
     Returns
     -------
     list of int
         List of default development stage cuts
-
-    Notes
-    -----
-    P15-P24 is the time window when infantile amnesia disappears;
-    P24-P55 is early and late adolescence. The Hippocampus is mature but the prefrontal
-    cortex is still developing);
-    P55-P90 is late adolescence/young adulthood. The prefrontal cortex is developing
-    P90 is considered adulthood
     """
-    return [15, 24, 55, 90, 300]
+    from ngmd.config import get_config_section
+    
+    config = get_config_section("development_stages", defaults={"cuts": [15, 24, 55, 90, 300]})
+    return config["cuts"]

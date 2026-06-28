@@ -134,6 +134,7 @@ def _plot_freq_histogram(bins, freqs, ax=None, **kwargs):
     # Parse kwargs
     color = kwargs.pop("color", "black")
     alpha = kwargs.pop("alpha", 0.6)
+    kwargs.pop("bar", None)
     ax.plot(
         bins,
         freqs,
